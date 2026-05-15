@@ -11,8 +11,8 @@ public class Trainer extends User {
     private String availableTime;
     @OneToMany(mappedBy="trainer",cascade=CascadeType.ALL,fetch=FetchType.LAZY) @JsonIgnore
     private List<ClassSession> classSessions=new ArrayList<>();
-    @OneToMany(mappedBy="trainer",cascade=CascadeType.ALL,fetch=FetchType.LAZY) @JsonIgnore
-    private List<WorkoutPlan> workoutPlans=new ArrayList<>();
+
+
     public Trainer(){}
     public Trainer(String name,String email,String phoneNo,String userName,String password,
                    String gender,String spec,Double salary,String time){
@@ -24,5 +24,5 @@ public class Trainer extends User {
     public Double getSalary()        {return salary;}         public void setSalary(Double v)        {salary=v;}
     public String getAvailableTime() {return availableTime;}  public void setAvailableTime(String v) {availableTime=v;}
     public List<ClassSession> getClassSessions(){return classSessions;} public void setClassSessions(List<ClassSession> v){classSessions=v;}
-    public List<WorkoutPlan>  getWorkoutPlans() {return workoutPlans;}  public void setWorkoutPlans(List<WorkoutPlan> v)  {workoutPlans=v;}
+
 }
