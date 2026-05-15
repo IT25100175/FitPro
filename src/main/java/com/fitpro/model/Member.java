@@ -17,7 +17,7 @@ public class Member extends User {
     @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="plan_id",insertable=false,updatable=false)             @JsonIgnore private MembershipPlan plan;
     @OneToMany(mappedBy="member",cascade=CascadeType.ALL,fetch=FetchType.LAZY) @JsonIgnore private List<AttendanceRecord> attendanceRecords=new ArrayList<>();
     @OneToMany(mappedBy="member",cascade=CascadeType.ALL,fetch=FetchType.LAZY) @JsonIgnore private List<Review> reviews=new ArrayList<>();
-    @OneToMany(mappedBy="member",cascade=CascadeType.ALL,fetch=FetchType.LAZY) @JsonIgnore private List<WorkoutPlan> workoutPlans=new ArrayList<>();
+
     public Member(){}
     public Member(String name,String email,String phoneNo,String userName,String password,
                   String gender,LocalDate dob,String membershipType){
